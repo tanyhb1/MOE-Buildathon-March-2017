@@ -1,0 +1,37 @@
+extends layout
+
+block content
+  .jumbotron
+    img.mascot(src='/mascot.png', alt='mascot')
+    h1.fuss
+      em.text-center
+        strong Vocab Quiz
+    p.lead.pageContent.text-center A context-based learning app intuitive for students, and customisable for teachers.
+  
+  .container
+    hr
+    .row.text-center
+      .col-sm-12
+        h3 QUIZ THYSELF
+        p.lead Click to go to the quiz
+        p
+          a.btn.btn-primary(href='/quiz', role='button') 
+            i.fa.fa-clone
+            |  Quiz »
+
+      .col-sm-6
+        h3 Teacher/Customisation
+        p.lead Customise the functionality of the quiz!
+        p
+          a.btn.btn-primary(href='/quiz/create', role='button') 
+            i.fa.fa-cog.fa-spin
+            |  Customise »
+
+      .col-sm-6
+        h3 Stats/Metrics
+        p.lead Stats and metrics for self-directed learning
+        p
+          a.btn.btn-primary(href='/stats', role='button') 
+            i.fa.fa-hand-paper-o
+            |  Stats
+

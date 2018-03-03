@@ -1,0 +1,16 @@
+extends ../layout
+
+block content
+  .page-header.text-center
+    h3 Quizzes
+    if quizzes.length !== 0
+      ul
+        each quiz in quizzes
+          li
+            a(href=`quiz/${quiz._id}`)= quiz.name
+    else
+      p You have not created any quizzes.
+    if user.isTeacher
+      a(href='/quiz/create').btn.btn-primary
+        i.fa.fa-users
+        | Create a Quiz

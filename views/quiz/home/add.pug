@@ -1,0 +1,26 @@
+extends ../../layout
+
+block content
+  h1 Quiz designer
+  form( method='POST' action=`/quiz/${id}/add`)
+    input(type='hidden', name='_csrf', value=_csrf)
+    .form-group
+      label.col-sm-3.control-label(for='question') Question:
+      .col-sm-7
+        input.form-control(type='text', placeholder='Input your questions' name='question', id='question')
+    .form-group
+      label.col-sm-3.control-label(for='answer') Choices:
+      .col-sm-1
+        input.form-control(type='radio', name='answer', value='1')
+        input.form-control(type='radio', name='answer', value='2')
+        input.form-control(type='radio', name='answer', value='3')
+        input.form-control(type='radio', name='answer', value='4')
+      .col-sm-6
+        input.form-control(type='text', name='choice-1', id='choice-1')
+        input.form-control(type='text', name='choice-2', id='choice-2')
+        input.form-control(type='text', name='choice-3', id='choice-3')
+        input.form-control(type='text', name='choice-4', id='choice-4')
+    .form-group
+      label(for='meaning') Meaning:
+      input#meaining.form-control(type='text', placeholder='Meaning/description for the answer')
+    button.btn-primary(type='submit') Submit
